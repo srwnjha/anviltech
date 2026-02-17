@@ -114,7 +114,7 @@ export default function Navbar() {
             </div>
             <div>
               <p className="text-xs text-text-secondary">Hotline 24/7</p>
-              <p className="text-sm font-semibold text-text-primary">+(684) 555-0102</p>
+              <p className="text-sm font-semibold text-text-primary">+(977) 9705-236388</p>
             </div>
           </div>
 
