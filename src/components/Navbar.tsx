@@ -57,7 +57,7 @@ export default function Navbar() {
                 <path d="M20 8 L24 16 L32 16 L26 22 L28 30 L20 25 L12 30 L14 22 L8 16 L16 16 Z" fill="white" />
               </svg>
             </div>
-            <span className="text-2xl font-bold text-text-primary">Manit</span>
+            <span className="text-2xl font-bold text-text-primary">Anvil Technologies</span>
           </Link>
 
           {/* Desktop Navigation */}
