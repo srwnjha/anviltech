@@ -44,7 +44,7 @@ export default function Footer() {
                   <path d="M20 8 L24 16 L32 16 L26 22 L28 30 L20 25 L12 30 L14 22 L8 16 L16 16 Z" fill="white" />
                 </svg>
               </div>
-              <span className="text-2xl font-bold">Manit</span>
+              <span className="text-2xl font-bold">Anvil Technologies</span>
             </Link>
             <p className="text-text-light text-sm leading-relaxed mb-6">
               Mattis inelit neque quis donec eleifnd amet. Amet sed et cursus eu euismod. Egestas in morbi tristique.
@@ -105,7 +105,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                <span className="text-text-light text-sm">manit@gmail.com</span>
+                <span className="text-text-light text-sm">info@anvil.com.np</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
@@ -131,7 +131,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-text-light text-sm text-center md:text-left">
-              Copyright © 2024 Manit by <span className="text-secondary">wpOceans</span>. All Rights Reserved.
+              Copyright © 2026 Anvil Technologies . All Rights Reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link to="#" className="text-text-light text-sm hover:text-secondary transition-colors">
