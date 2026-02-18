@@ -33,7 +33,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full"
             >
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-primary">Create Your Dream Project With Us</span>
+              <span className="text-sm font-medium text-primary">Forging IT Excellence</span>
             </motion.div>
 
             <motion.h1
@@ -42,7 +42,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary leading-tight"
             >
-              Best It <span className="text-secondary">Solution</span> For Your Business
+              Strong & Secure IT <span className="text-secondary">Services</span> For Your Business
             </motion.h1>
 
             <motion.p
