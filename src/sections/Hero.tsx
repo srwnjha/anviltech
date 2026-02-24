@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Trophy } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Trophy } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +33,9 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full"
             >
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-primary">Forging IT Excellence</span>
+              <span className="text-sm font-medium text-primary">
+                Forging IT Excellence
+              </span>
             </motion.div>
 
             <motion.h1
@@ -42,7 +44,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary leading-tight"
             >
-              Strong & Secure IT <span className="text-secondary">Services</span> For Your Business
+              Strong & Secure IT{" "}
+              <span className="text-secondary">Services</span> For Your Business
             </motion.h1>
 
             <motion.p
@@ -51,7 +54,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-lg text-text-secondary max-w-lg"
             >
-              Your success is our success. We prioritize understanding your unique business requirements, tailoring solutions that not only meet your needs but also exceed your expectations.
+              Your success is our success. We prioritize understanding your
+              unique business requirements, tailoring solutions that not only
+              meet your needs but also exceed your expectations.
             </motion.p>
 
             <motion.div
@@ -83,7 +88,9 @@ export default function Hero() {
               </div>
               <div>
                 <p className="text-3xl font-bold text-primary">25+</p>
-                <p className="text-sm text-text-secondary">Years Of Experience</p>
+                <p className="text-sm text-text-secondary">
+                  Years Of Experience
+                </p>
               </div>
             </motion.div>
           </div>
@@ -98,7 +105,7 @@ export default function Hero() {
             {/* Decorative shapes */}
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent-yellow/30 rounded-full blur-2xl" />
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/20 rounded-full blur-xl" />
-            
+
             {/* Main Image */}
             <div className="relative z-10">
               <img
@@ -115,8 +122,18 @@ export default function Hero() {
               className="absolute top-10 right-0 w-16 h-16 bg-white rounded-xl shadow-lg flex items-center justify-center"
             >
               <div className="w-10 h-10 bg-accent-green/20 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-accent-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-6 h-6 text-accent-green"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
               </div>
             </motion.div>
@@ -127,8 +144,18 @@ export default function Hero() {
               className="absolute bottom-20 left-0 w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center"
             >
               <div className="w-8 h-8 bg-accent-purple/20 rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <svg
+                  className="w-5 h-5 text-accent-purple"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
                 </svg>
               </div>
             </motion.div>

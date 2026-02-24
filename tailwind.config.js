@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -69,7 +69,8 @@ module.exports = {
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
         card: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
-        "card-hover": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+        "card-hover":
+          "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
         elevated: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
       },
       keyframes: {
@@ -115,8 +116,10 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
         "fade-in-up": "fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards",
-        "fade-in-left": "fade-in-left 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards",
-        "fade-in-right": "fade-in-right 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "fade-in-left":
+          "fade-in-left 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "fade-in-right":
+          "fade-in-right 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards",
         "scale-in": "scale-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards",
         "pulse-ring": "pulse-ring 1.5s ease-out infinite",
         float: "float 3s ease-in-out infinite",
@@ -127,4 +130,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
