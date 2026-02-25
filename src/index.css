@@ -7,6 +7,7 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
+    --consult: 214 98% 30%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -26,6 +27,20 @@
     --input: 214 32% 91%;
     --ring: 224 76% 40%;
     --radius: 0.5rem;
+    --curve-fill: white;
+  }
+  .dark {
+    --background: 222 47% 11%; /* dark navy/gray – very close to black, looks premium */
+    --foreground: 0 0% 98%; /* almost white text */
+    /* Optional: make cards/popovers dark too */
+    --card: 222 47% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 47% 15%;
+    --popover-foreground: 0 0% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --border: 217 33% 20%;
+    --curve-fill: hsl(var(--background));
   }
 }
 

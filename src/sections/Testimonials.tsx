@@ -1,23 +1,25 @@
-import { motion } from 'framer-motion';
-import { Star, Quote, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { Star, Quote, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const testimonials = [
   {
     id: 1,
-    name: 'Eleanor Pena',
-    role: 'CEO of BREAG',
-    image: '/testimonial-1.jpg',
+    name: "Eleanor Pena",
+    role: "CEO of BREAG",
+    image: "/testimonial-1.jpg",
     rating: 4.0,
-    quote: 'It uses a dictionary of over 200 Latin words, combined with handful the model sentence structures, to generate lorem ipsum which looks reasonable. The generated lorem ipsum is therefore always free from repetition injected humour or non-characteristic.',
+    quote:
+      "It uses a dictionary of over 200 Latin words, combined with handful the model sentence structures, to generate lorem ipsum which looks reasonable. The generated lorem ipsum is therefore always free from repetition injected humour or non-characteristic.",
   },
   {
     id: 2,
-    name: 'Jeffrey Dykes',
-    role: 'Senior Developer',
-    image: '/testimonial-2.jpg',
+    name: "Jeffrey Dykes",
+    role: "Senior Developer",
+    image: "/testimonial-2.jpg",
     rating: 4.0,
-    quote: 'It uses a dictionary of over 200 Latin words, combined with handful the model sentence structures, to generate lorem ipsum which looks reasonable. The generated lorem ipsum is therefore always free from repetition injected humour or non-characteristic.',
+    quote:
+      "It uses a dictionary of over 200 Latin words, combined with handful the model sentence structures, to generate lorem ipsum which looks reasonable. The generated lorem ipsum is therefore always free from repetition injected humour or non-characteristic.",
   },
 ];
 
@@ -29,19 +31,21 @@ function StarRating({ rating }: { rating: number }) {
           key={star}
           className={`w-4 h-4 ${
             star <= rating
-              ? 'text-accent-yellow fill-accent-yellow'
-              : 'text-gray-300'
+              ? "text-accent-yellow fill-accent-yellow"
+              : "text-gray-300"
           }`}
         />
       ))}
-      <span className="text-sm text-text-secondary ml-1">({rating.toFixed(1)})</span>
+      <span className="text-sm text-text-secondary ml-1">
+        ({rating.toFixed(1)})
+      </span>
     </div>
   );
 }
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           {/* Left Content */}
@@ -59,7 +63,8 @@ export default function Testimonials() {
               Our Latest Case Studies
             </h2>
             <p className="text-text-secondary mb-8 leading-relaxed">
-              Fringilla feugiat et imperdiet iaculis scelue vestibulum diam eget fusce. Vitae id amet eleifend lacus ornare nisl leo dis est.
+              Fringilla feugiat et imperdiet iaculis scelue vestibulum diam eget
+              fusce. Vitae id amet eleifend lacus ornare nisl leo dis est.
             </p>
             <Link
               to="/contact"
@@ -79,7 +84,7 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl border border-gray-100 p-6 shadow-card hover:shadow-card-hover transition-all duration-300 relative"
+                className="bg-card rounded-2xl border border-gray-100 p-6 shadow-card hover:shadow-card-hover transition-all duration-300 relative"
               >
                 {/* Quote Icon */}
                 <div className="absolute top-6 right-6">
@@ -94,8 +99,12 @@ export default function Testimonials() {
                     className="w-14 h-14 rounded-full object-cover"
                   />
                   <div>
-                    <h4 className="font-bold text-text-primary">{testimonial.name}</h4>
-                    <p className="text-sm text-text-secondary">{testimonial.role}</p>
+                    <h4 className="font-bold text-text-primary">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-sm text-text-secondary">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
 

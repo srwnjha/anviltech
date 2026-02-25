@@ -1,12 +1,32 @@
-import { useEffect, useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { value: 25, suffix: '+', label: 'Years Of Experience', color: 'text-primary' },
-  { value: 12, suffix: 'K+', label: 'Project Completed', color: 'text-secondary' },
-  { value: 20, suffix: '+', label: 'Industry Experience', color: 'text-accent-green' },
-  { value: 10, suffix: 'K+', label: 'Happy Clients', color: 'text-accent-purple' },
-  { value: 32, suffix: '+', label: 'Awards Winner', color: 'text-primary' },
+  {
+    value: 25,
+    suffix: "+",
+    label: "Years Of Experience",
+    color: "text-primary",
+  },
+  {
+    value: 12,
+    suffix: "K+",
+    label: "Project Completed",
+    color: "text-secondary",
+  },
+  {
+    value: 20,
+    suffix: "+",
+    label: "Industry Experience",
+    color: "text-accent-green",
+  },
+  {
+    value: 10,
+    suffix: "K+",
+    label: "Happy Clients",
+    color: "text-accent-purple",
+  },
+  { value: 32, suffix: "+", label: "Awards Winner", color: "text-primary" },
 ];
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
@@ -20,7 +40,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
       const steps = 60;
       const increment = value / steps;
       let current = 0;
-      
+
       const timer = setInterval(() => {
         current += increment;
         if (current >= value) {
@@ -37,14 +57,15 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
   return (
     <span ref={ref}>
-      {count}{suffix}
+      {count}
+      {suffix}
     </span>
   );
 }
 
 export default function Stats() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {stats.map((stat, index) => (
@@ -56,7 +77,9 @@ export default function Stats() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <p className={`text-4xl md:text-5xl font-bold ${stat.color} mb-2`}>
+              <p
+                className={`text-4xl md:text-5xl font-bold ${stat.color} mb-2`}
+              >
                 <Counter value={stat.value} suffix={stat.suffix} />
               </p>
               <p className="text-text-secondary text-sm">{stat.label}</p>

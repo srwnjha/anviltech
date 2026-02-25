@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { toast } from 'sonner';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Message sent successfully! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    toast.success("Message sent successfully! We will get back to you soon.");
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -31,7 +31,8 @@ export default function ContactForm() {
             Have Any Question?
           </h2>
           <p className="text-text-secondary">
-            It is a long established fact that a reader will be distracted content of a page when looking.
+            It is a long established fact that a reader will be distracted
+            content of a page when looking.
           </p>
         </motion.div>
 
@@ -41,7 +42,7 @@ export default function ContactForm() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl p-8 md:p-10 shadow-card"
+          className="bg-card rounded-2xl p-8 md:p-10 shadow-card"
         >
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <input
@@ -49,28 +50,40 @@ export default function ContactForm() {
               placeholder="Your Name"
               required
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              className="bg-background 
+      text-foreground w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             />
             <input
               type="email"
               placeholder="Your Email"
               required
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              className=" bg-background 
+      text-foreground w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             />
             <input
               type="tel"
               placeholder="Your phone"
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+              onChange={(e) =>
+                setFormData({ ...formData, phone: e.target.value })
+              }
+              className=" bg-background 
+      text-foreground w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             />
             <select
               value={formData.subject}
-              onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-text-secondary"
+              onChange={(e) =>
+                setFormData({ ...formData, subject: e.target.value })
+              }
+              className="bg-background 
+      text-foreground w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-text-secondary"
             >
               <option value="">Subject</option>
               <option value="general">General Inquiry</option>
@@ -79,14 +92,17 @@ export default function ContactForm() {
               <option value="partnership">Partnership</option>
             </select>
           </div>
-          
+
           <textarea
             placeholder="Message"
             rows={5}
             required
             value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none mb-6"
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
+            className="bg-background 
+      text-foreground w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none mb-6"
           />
 
           <div className="text-center">

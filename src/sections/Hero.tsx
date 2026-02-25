@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen pt-32 pb-20 bg-gradient-hero overflow-hidden"
+      className="relative min-h-screen pt-32 pb-20 bg-background overflow-hidden"
     >
       {/* Decorative Elements */}
       <div className="absolute top-40 left-10 w-20 h-20 bg-accent-yellow/20 rounded-full blur-xl" />

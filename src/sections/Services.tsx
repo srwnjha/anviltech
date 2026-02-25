@@ -50,7 +50,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -77,7 +77,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative bg-white rounded-2xl border ${service.borderColor} p-8 card-hover group`}
+              className={`relative bg-card rounded-2xl border ${service.borderColor} p-8 card-hover group`}
             >
               {/* Number Badge */}
               <div

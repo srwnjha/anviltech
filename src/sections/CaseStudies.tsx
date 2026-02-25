@@ -1,31 +1,31 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
 const caseStudies = [
   {
     id: 1,
-    category: 'DEVELOPMENT / IDEA',
-    title: 'Consulting Project',
-    image: '/portfolio-1.jpg',
+    category: "DEVELOPMENT / IDEA",
+    title: "Consulting Project",
+    image: "/portfolio-1.jpg",
   },
   {
     id: 2,
-    category: 'PRODUCT / IDEA',
-    title: 'Product Design',
-    image: '/portfolio-2.jpg',
+    category: "PRODUCT / IDEA",
+    title: "Product Design",
+    image: "/portfolio-2.jpg",
   },
   {
     id: 3,
-    category: 'UI/UX / DESIGN',
-    title: 'Website Redesign',
-    image: '/portfolio-1.jpg',
+    category: "UI/UX / DESIGN",
+    title: "Website Redesign",
+    image: "/portfolio-1.jpg",
   },
   {
     id: 4,
-    category: 'MARKETING / STRATEGY',
-    title: 'Digital Campaign',
-    image: '/portfolio-2.jpg',
+    category: "MARKETING / STRATEGY",
+    title: "Digital Campaign",
+    image: "/portfolio-2.jpg",
   },
 ];
 
@@ -37,11 +37,13 @@ export default function CaseStudies() {
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + caseStudies.length) % caseStudies.length
+    );
   };
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-20 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -67,8 +69,10 @@ export default function CaseStudies() {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <div className="flex gap-6 transition-transform duration-500 ease-out"
-               style={{ transform: `translateX(-${currentSlide * (100 / 3)}%)` }}>
+          <div
+            className="flex gap-6 transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(-${currentSlide * (100 / 3)}%)` }}
+          >
             {caseStudies.map((study) => (
               <div
                 key={study.id}
@@ -85,7 +89,7 @@ export default function CaseStudies() {
                   </div>
 
                   {/* Overlay Card */}
-                  <div className="absolute bottom-4 left-4 right-4 bg-white rounded-xl p-4 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="absolute bottom-4 left-4 right-4 bg-card rounded-xl p-4 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-xs font-semibold text-primary mb-1">
@@ -113,7 +117,7 @@ export default function CaseStudies() {
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
-            
+
             {/* Dots */}
             <div className="flex gap-2">
               {caseStudies.map((_, index) => (
@@ -122,8 +126,8 @@ export default function CaseStudies() {
                   onClick={() => setCurrentSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentSlide
-                      ? 'bg-primary w-8'
-                      : 'bg-gray-300 hover:bg-gray-400'
+                      ? "bg-primary w-8"
+                      : "bg-gray-300 hover:bg-gray-400"
                   }`}
                 />
               ))}

@@ -1,43 +1,43 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, User } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { ArrowRight, Calendar, User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const news = [
   {
     id: 1,
-    category: 'Technology',
-    categoryColor: 'bg-primary',
-    date: 'Sep 03, 2024',
-    author: 'Anne William',
-    title: '15 Secrets Of Digital Transformation',
-    image: '/blog-1.jpg',
-    slug: '15-secrets-of-digital-transformation',
+    category: "Technology",
+    categoryColor: "bg-primary",
+    date: "Sep 03, 2024",
+    author: "Anne William",
+    title: "15 Secrets Of Digital Transformation",
+    image: "/blog-1.jpg",
+    slug: "15-secrets-of-digital-transformation",
   },
   {
     id: 2,
-    category: 'Software',
-    categoryColor: 'bg-secondary',
-    date: 'Sep 06, 2024',
-    author: 'Anne William',
-    title: 'Plan Your Project with Your Software',
-    image: '/blog-2.jpg',
-    slug: 'plan-your-project-with-your-software',
+    category: "Software",
+    categoryColor: "bg-secondary",
+    date: "Sep 06, 2024",
+    author: "Anne William",
+    title: "Plan Your Project with Your Software",
+    image: "/blog-2.jpg",
+    slug: "plan-your-project-with-your-software",
   },
   {
     id: 3,
-    category: 'Technology',
-    categoryColor: 'bg-accent-purple',
-    date: 'Sep 06, 2024',
-    author: 'Anne William',
-    title: 'Tech Conference Events 2023/2024',
-    image: '/blog-3.jpg',
-    slug: 'tech-conference-events-2023-2024',
+    category: "Technology",
+    categoryColor: "bg-accent-purple",
+    date: "Sep 06, 2024",
+    author: "Anne William",
+    title: "Tech Conference Events 2023/2024",
+    image: "/blog-3.jpg",
+    slug: "tech-conference-events-2023-2024",
   },
 ];
 
 export default function LatestNews() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -75,7 +75,9 @@ export default function LatestNews() {
                     className="w-full aspect-video object-cover"
                   />
                   {/* Category Badge */}
-                  <span className={`absolute top-4 left-4 px-4 py-1 ${item.categoryColor} text-white text-xs font-semibold rounded-full`}>
+                  <span
+                    className={`absolute top-4 left-4 px-4 py-1 ${item.categoryColor} text-white text-xs font-semibold rounded-full`}
+                  >
                     {item.category}
                   </span>
                 </div>

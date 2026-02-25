@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface PageHeaderProps {
   title: string;
@@ -27,7 +27,7 @@ export default function PageHeader({ title, breadcrumb }: PageHeaderProps) {
         >
           {title}
         </motion.h1>
-        
+
         <motion.nav
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,11 +36,16 @@ export default function PageHeader({ title, breadcrumb }: PageHeaderProps) {
         >
           {breadcrumb.map((item, index) => (
             <span key={item.name} className="flex items-center gap-2">
-              {index > 0 && <span className="w-1 h-1 bg-white/60 rounded-full" />}
+              {index > 0 && (
+                <span className="w-1 h-1 bg-white/60 rounded-full" />
+              )}
               {index === breadcrumb.length - 1 ? (
                 <span className="text-white">{item.name}</span>
               ) : (
-                <Link to={item.path} className="hover:text-white transition-colors">
+                <Link
+                  to={item.path}
+                  className="hover:text-white transition-colors"
+                >
                   {item.name}
                 </Link>
               )}
@@ -54,7 +59,7 @@ export default function PageHeader({ title, breadcrumb }: PageHeaderProps) {
         <svg viewBox="0 0 1440 60" fill="none" className="w-full">
           <path
             d="M0 60L1440 60L1440 0C1440 0 1140 60 720 60C300 60 0 0 0 0L0 60Z"
-            fill="white"
+            fill="var(--curve-fill) "
           />
         </svg>
       </div>
