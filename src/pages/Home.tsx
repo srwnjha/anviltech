@@ -9,6 +9,7 @@ import CaseStudies from "@/sections/CaseStudies";
 import Testimonials from "@/sections/Testimonials";
 import ConsultationCTA from "@/sections/ConsultationCTA";
 import LatestNews from "@/sections/LatestNews";
+import Clients from "@/sections/Client";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Clients />
         <Stats />
         <About />
         <VideoSection />

@@ -1,23 +1,54 @@
 import { useRef, useState } from "react";
 import { ArrowRight, Star, Clock } from "lucide-react";
 import { motion } from "framer-motion";
-
+const countries = [
+  { id: "np", code: "+977", flag: "🇳🇵", name: "Nepal" },
+  { id: "us", code: "+1", flag: "🇺🇸", name: "United States" },
+  { id: "ca", code: "+1", flag: "🇨🇦", name: "Canada" },
+  { id: "gb", code: "+44", flag: "🇬🇧", name: "United Kingdom" },
+  { id: "in", code: "+91", flag: "🇮🇳", name: "India" },
+  { id: "au", code: "+61", flag: "🇦🇺", name: "Australia" },
+  { id: "de", code: "+49", flag: "🇩🇪", name: "Germany" },
+  { id: "fr", code: "+33", flag: "🇫🇷", name: "France" },
+];
 export default function Hero() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    countryCode: "+977", // default to Nepal
+    countryId: "np",
   });
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // const selectedCountry = countries.find(
+  //   (c) => c.code === formData.countryCode
+  // );
+  const selectedCountry = countries.find((c) => c.id === formData.countryId);
+
+  {
+    /* Country Selector Button */
+  }
+  <button
+    type="button"
+    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+    className="flex items-center gap-2 px-4 py-4 bg-white/10 border border-r-0 border-white/20 rounded-l-xl text-white focus:outline-none hover:bg-white/20 transition z-10"
+  >
+    <span className="text-lg">{selectedCountry?.flag}</span>
+    <span>{selectedCountry?.code}</span>
+    <span className="text-xs">▼</span>
+  </button>;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Full Phone:", formData.countryCode + formData.phone);
     alert("Request received! We'll contact you soon.");
-    setFormData({ name: "", phone: "" });
+    setFormData({ name: "", phone: "", countryCode: "+977", countryId: "np" });
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center ">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -73,22 +104,63 @@ export default function Hero() {
                 </div>
 
                 <div>
-                  <input
-                    type="tel"
-                    placeholder="📞 Phone number"
-                    value={formData.phone}
-                    onChange={(e) =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
-                    className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition"
-                    required
-                  />
+                  <div className="relative flex">
+                    {/* Country Selector */}
+                    <button
+                      type="button"
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      className="flex items-center gap-2 px-5 py-3 bg-white/10 border border-r-0 border-white/20 rounded-l-xl text-white focus:outline-none hover:bg-white/20 transition"
+                    >
+                      <span className="text-lg">{selectedCountry?.flag}</span>
+                      <span>{selectedCountry?.code}</span>
+                      <span className="text-xs">▼</span>
+                    </button>
+
+                    {/* Phone Number Input */}
+                    <input
+                      type="tel"
+                      placeholder="📞Phone number"
+                      value={formData.phone}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
+                      className="flex-1 px-5 py-4 bg-white/10 border border-white/20 rounded-r-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition"
+                      required
+                    />
+
+                    {/* Dropdown Menu */}
+                    {isDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-72 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 max-h-80 overflow-auto">
+                        {countries.map((country) => (
+                          <button
+                            key={country.id}
+                            type="button"
+                            onClick={() => {
+                              setFormData({
+                                ...formData,
+                                countryCode: country.code,
+                                countryId: country.id,
+                              });
+                              setIsDropdownOpen(false);
+                            }}
+                            className="w-full px-2 py-1 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-3 transition"
+                          >
+                            <span className="text-xl">{country.flag}</span>
+                            <span className="font-medium">{country.code}</span>
+                            <span className="text-gray-500 dark:text-gray-400">
+                              {country.name}
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full md:w-auto px-10 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition flex items-center justify-center gap-2 group"
+                className="w-full md:w-auto px-4 py-2 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition flex items-center justify-center gap-2 group"
               >
                 Request a Call
                 <ArrowRight className="group-hover:translate-x-1 transition" />
